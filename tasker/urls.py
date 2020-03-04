@@ -2,6 +2,6 @@ from django.urls import path
 from . import  views
 
 urlpatterns = [
-    path('tasker/:int',),
-    path('',views.index)
+    path('/index',views.index),
+    path('tasker/new',views.add)
 ]

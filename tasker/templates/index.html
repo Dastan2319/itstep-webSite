@@ -2,15 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Пример {{foo}}</title>
+    <title>Пример </title>
 </head>
 <body>
     <div>
-        {% if second == first %}
-            <h1>{{second}} == {{first}}</h1>
-        {% else %}
-            <span>lorem</span>
-        {% endif %}
+
+        {% for i in tasks %}
+         <div class="main">
+             <p>Login:{{i.login}}</p>
+             <p>Task:{{i.task}}</p>
+         </div>
+        {% endfor %}
+
     </div>
 </body>
 </html>
+
+<style>
+.main{
+    background:yellow;
+    padding-left:10px;
+    border:1px solid black;
+    margin:10px;
+    width:300px;
+}
+
+</style>
