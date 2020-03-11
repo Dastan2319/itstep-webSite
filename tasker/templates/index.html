@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Пример </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-    <div>
+  <div id="app">
+    <v-app>
+       <template>
+        <v-bottom-navigation
+          v-model="bottomNav"
+        >
+          <template>
+              <v-btn value="recent">
+                <span>{{item.login}}</span>
+                <v-icon>mdi-history</v-icon>
+              </v-btn>
+          </template>
 
-        {% for i in tasks %}
-         <div class="main">
-             <p>Login:{{i.login}}</p>
-             <p>Task:{{i.task}}</p>
-         </div>
-        {% endfor %}
 
-    </div>
+
+        </v-bottom-navigation>
+</template>
+
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data()
+      {
+          return{
+            bottomNav: 'recent',
+          }
+      }
+    })
+  </script>
 </body>
 </html>
-
-<style>
-.main{
-    background:yellow;
-    padding-left:10px;
-    border:1px solid black;
-    margin:10px;
-    width:300px;
-}
-
-</style>
