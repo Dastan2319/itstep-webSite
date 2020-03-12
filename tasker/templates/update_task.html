@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Обновление</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit"  />
+</form>
+
+{% endblock %}
